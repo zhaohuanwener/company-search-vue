@@ -41,7 +41,7 @@
               ele = h('a', {
                 on: {
                   click() {
-                    window.open(`/#/info?name=${companyName}&id=${id}&mod=bj`);
+                    window.open(`/#/info?name=${companyName}&id=${id}&mod=bj&bigmodName=%E4%BC%81%E4%B8%9A%E8%83%8C%E6%99%AF&littlemodName=%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF`);
                   },
                 },
               }, productName);

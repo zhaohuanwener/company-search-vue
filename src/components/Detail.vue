@@ -10,111 +10,91 @@
                 <Submenu name="bj">
                     <template slot="title">
                       <Icon type="help-buoy"></Icon>
-                        企业背景
+                        <span id="bj_span">企业背景</span>
                     </template>
                     <Menu-item name="bj_info">
-                      基本信息
+                      <span id="bj_info_span">基本信息</span>
                     </Menu-item>
-                    <Menu-item name="bj_staff" :class="{disabled: allCount.staffCount.disabled}">
-                      主要人员
-                      <span class="badge">{{allCount.staffCount.value}}</span>
+                    <Menu-item name="bj_staff">
+                      <span id="bj_staff_span">主要人员</span>
                     </Menu-item>
-                    <Menu-item name="bj_holder" :class="{disabled: allCount.holderCount.disabled}">
-                      股东信息
-                      <span class="badge">{{allCount.holderCount.value}}</span>
+                    <Menu-item name="bj_holder">
+                      <span id="bj_holder_span">股东信息</span>
                     </Menu-item>
-                    <Menu-item name="bj_investment" :class="{disabled: allCount.inverstCount.disabled}">
-                      对外投资
-                      <span class="badge">{{allCount.inverstCount.value}}</span>
+                    <Menu-item name="bj_investment">
+                    <span id="bj_investment_span">对外投资</span>
                     </Menu-item>
-                    <Menu-item name="bj_changeinfo" :class="{disabled: allCount.changeCount.disabled}">
-                      变更记录
-                      <span class="badge">{{allCount.changeCount.value}}</span>
+                    <Menu-item name="bj_changeinfo">
+                      <span id="bj_changeinfo_span">变更记录</span>
                     </Menu-item>
-                    <Menu-item name="bj_branch" class="disabled" :class="{disabled: allCount.branchCount.disabled}">
+                    <Menu-item name="bj_branch" class="disabled">
                       分支机构
-                      <span class="badge">{{allCount.branchCount.value}}</span>
                     </Menu-item>
                 </Submenu>
 
                 <Submenu name="dev">
                     <template slot="title">
                         <Icon type="arrow-graph-up-right"></Icon>
-                        企业发展
+                        <span id="dev_span">企业发展</span>
                     </template>
-                    <Menu-item name="dev_companyrongzi" :class="{disabled: allCount.companyRongzi.disabled}">
-                      融资历史
-                      <span class="badge">{{allCount.companyRongzi.value}}</span>
+                    <Menu-item name="dev_companyrongzi">
+                      <span id="dev_companyrongzi_span">融资历史</span>
                     </Menu-item>
-                    <Menu-item name="dev_companyteammember" :class="{disabled: allCount.companyTeammember.disabled}">
-                      核心团队
-                      <span class="badge">{{allCount.companyTeammember.value}}</span>
+                    <Menu-item name="dev_companyteammember">
+                      <span id="dev_companyteammember_span">核心团队</span>
                     </Menu-item>
-                    <Menu-item name="dev_companyproduct" :class="{disabled: allCount.companyProduct.disabled}">
-                      企业业务
-                      <span class="badge">{{allCount.companyProduct.value}}</span>
+                    <Menu-item name="dev_companyproduct">
+                      <span id="dev_companyproduct_span">企业业务</span>
                     </Menu-item>
-                    <Menu-item name="dev_jigoutzanli" :class="{disabled: allCount.jigouTzanli.disabled}">
-                      投资事件
-                      <span class="badge">{{allCount.jigouTzanli.value}}</span>
+                    <Menu-item name="dev_jigoutzanli">
+                      <span id="dev_jigoutzanli_span">投资事件</span>
                     </Menu-item>
-                    <Menu-item name="dev_companyjingpin" :class="{disabled: allCount.companyJingpin.disabled}">
-                      竞品信息
-                      <span class="badge">{{allCount.companyJingpin.value}}</span>
+                    <Menu-item name="dev_companyjingpin">
+                      <span id="dev_companyjingpin_span">竞品信息</span>
                     </Menu-item>
                 </Submenu>
 
                 <Submenu name="sifa">
                     <template slot="title">
                         <Icon type="ios-analytics"></Icon>
-                        司法风险
+                        <span id="sifa_span">司法风险</span>
                     </template>
-                    <Menu-item name="sifa_lawsuit" :class="{disabled: allCount.lawsuitCount.disabled}">
-                      法律诉讼
-                      <span class="badge">{{allCount.lawsuitCount.value}}</span>
+                    <Menu-item name="sifa_lawsuit">
+                      <span id="sifa_lawsuit_span">法律诉讼</span>
                     </Menu-item>
-                    <Menu-item name="sifa_court" :class="{disabled: allCount.courtCount.disabled}">
-                      法院公告
-                      <span class="badge">{{allCount.courtCount.value}}</span>
+                    <Menu-item name="sifa_court">
+                      <span id="sifa_court_span">法院公告</span>
                     </Menu-item>
                     <Menu-item name="" class="disabled">
                       失信人
-                      <span class="badge">0</span>
                     </Menu-item>
-                    <Menu-item name="sifa_zhixing" :class="{disabled: allCount.zhixing.disabled}">
-                      被执行人
-                      <span class="badge">{{allCount.zhixing.value}}</span>
+                    <Menu-item name="sifa_zhixing">
+                      <span id="sifa_zhixing_span">被执行人</span>
                     </Menu-item>
                 </Submenu>
 
                 <Submenu name="jyfx">
                     <template slot="title">
                         <Icon type="flash-off"></Icon>
-                        经营风险
+                        <span id="jyfx_span">经营风险</span>
                     </template>
-                    <Menu-item name="jyfx_abnormal" :class="{disabled: allCount.abnormalCount.disabled}">
-                      经营异常
-                      <span class="badge">{{allCount.abnormalCount.value}}</span>
+                    <Menu-item name="jyfx_abnormal" class="disabled">
+                      <span id="">经营异常</span>
                     </Menu-item>
-                    <Menu-item name="jyfx_punishment" :class="{disabled: allCount.punishment.disabled}">
-                      行政处罚
-                      <span class="badge">{{allCount.punishment.value}}</span>
+                    <Menu-item name="jyfx_punishment">
+                      <span id="jyfx_punishment_span">行政处罚</span>
                     </Menu-item>
-                    <Menu-item name="jyfx_illegal" :class="{disabled: allCount.illegalCount.disabled}">
-                      严重违法
-                      <span class="badge">{{allCount.illegalCount.value}}</span>
+                    <Menu-item name="jyfx_illegal" class="disabled">
+                      <span id="jyfx_illegal_span">严重违法</span>
                     </Menu-item>
-                    <Menu-item name="jyfx_equity" :class="{disabled: allCount.equityCount.disabled}">
-                      股权出质
-                      <span class="badge">{{allCount.equityCount.value}}</span>
+                    <Menu-item name="jyfx_equity">
+                      <span id="jyfx_equity_span">股权出质</span>
                     </Menu-item>
-                    <Menu-item name="jyfx_mortgage" :class="{disabled: allCount.mortgageCount.disabled}">
+                    <Menu-item name="jyfx_mortgage" class="disabled">
                       动产抵押
-                      <span class="badge">{{allCount.mortgageCount.value}}</span>
                     </Menu-item>
-                    <Menu-item name="jyfx_owntax" :class="{disabled: allCount.ownTaxCount.disabled}">
+                    <Menu-item name="jyfx_owntax" class="disabled">
                       欠税公告
-                      <span class="badge">{{allCount.ownTaxCount.value}}</span>
                     </Menu-item>
                 </Submenu>
 
@@ -122,39 +102,31 @@
                 <Submenu name="jyzk">
                     <template slot="title">
                         <Icon type="ios-list"></Icon>
-                        经营状况
+                        <span id="jyzk_span">经营状况</span>
                     </template>
-                    <Menu-item name="jyzk_bid" :class="{disabled: allCount.bidCount.disabled}">
-                      招投标
-                      <span class="badge">{{allCount.bidCount.value}}</span>
+                    <Menu-item name="jyzk_bid">
+                      <span id="jyzk_bid_span">招投标</span>
                     </Menu-item>
-                    <Menu-item name="jyfx_bond" :class="{disabled: allCount.bondCount.disabled}">
+                    <Menu-item name="jyfx_bond" class="disabled">
                       债券信息
-                      <span class="badge">{{allCount.bondCount.value}}</span>
                     </Menu-item>
-                    <Menu-item name="jyfx_goudi" :class="{disabled: allCount.goudiCount.disabled}">
+                    <Menu-item name="jyfx_goudi" class="disabled">
                       购地信息
-                      <span class="badge">{{allCount.goudiCount.value}}</span>
                     </Menu-item>
-                    <Menu-item name="jyzk_recruit" :class="{disabled: allCount.recruitCount.disabled}">
-                      招聘
-                      <span class="badge">{{allCount.recruitCount.value}}</span>
+                    <Menu-item name="jyzk_recruit">
+                      <span id="jyzk_recruit_span">招聘</span>
                     </Menu-item>
-                    <Menu-item name="jyzk_taxcredit" :class="{disabled: allCount.taxCreditCount.disabled}">
-                      税务评级
-                      <span class="badge">{{allCount.taxCreditCount.value}}</span>
+                    <Menu-item name="jyzk_taxcredit">
+                      <span id="jyzk_taxcredit_span">税务评级</span>
                     </Menu-item>
-                    <Menu-item name="jyzk_check" :class="{disabled: allCount.checkCount.disabled}">
-                      抽查检查
-                      <span class="badge">{{allCount.checkCount.value}}</span>
+                    <Menu-item name="jyzk_check">
+                      <span id="jyzk_check_span">抽查检查</span>
                     </Menu-item>
-                    <Menu-item name="jyzk_productinfo" :class="{disabled: allCount.productinfo.disabled}">
-                      产品信息
-                      <span class="badge">{{allCount.productinfo.value}}</span>
+                    <Menu-item name="jyzk_productinfo">
+                      <span id="jyzk_productinfo_span">产品信息</span>
                     </Menu-item>
-                    <Menu-item name="jyfx_qualification" :class="{disabled: allCount.qualification.disabled}">
+                    <Menu-item name="jyfx_qualification" class="disabled">
                       资质证书
-                      <span class="badge">{{allCount.qualification.value}}</span>
                     </Menu-item>
                 </Submenu>
 
@@ -162,29 +134,32 @@
                 <Submenu name="zscq">
                     <template slot="title">
                         <Icon type="ios-bookmarks"></Icon>
-                        知识产权
+                        <span id="zscq_span">知识产权</span>
                     </template>
-                    <Menu-item name="zscq_tm" :class="{disabled: allCount.tmCount.disabled}">
-                      商标信息
-                      <span class="badge">{{allCount.tmCount.value}}</span>
+                    <Menu-item name="zscq_tm">
+                      <span id="zscq_tm_span">商标信息</span>
                     </Menu-item>
-                    <Menu-item name="zscq_patent" :class="{disabled: allCount.patentCount.disabled}">
-                      专利
-                      <span class="badge">{{allCount.patentCount.value}}</span>
+                    <Menu-item name="zscq_patent">
+                      <span id="zscq_patent_span">专利</span>
                     </Menu-item>
-                    <Menu-item name="zscq_copyr" :class="{disabled: allCount.cpoyRCount.disabled}">
-                      著作权
-                      <span class="badge">{{allCount.cpoyRCount.value}}</span>
+                    <Menu-item name="zscq_copyr">
+                      <span id="zscq_copyr_span">著作权</span>
                     </Menu-item>
-                    <Menu-item name="zscq_icp" :class="{disabled: allCount.icpCount.disabled}">
-                      网站备案
-                      <span class="badge">{{allCount.icpCount.value}}</span>
+                    <Menu-item name="zscq_icp">
+                      <span id="zscq_icp_span">网站备案</span>
                     </Menu-item>
                 </Submenu>
             </Menu>
       </div>
-
+      
       <div class="layout-content-main">
+        <div class="bread">
+          <Breadcrumb>
+            <Breadcrumb-item>{{company_name}}</Breadcrumb-item>
+            <Breadcrumb-item>{{bread2}}</Breadcrumb-item>
+            <Breadcrumb-item>{{bread3}}</Breadcrumb-item>
+          </Breadcrumb>
+        </div>
         <router-view></router-view>
       </div>
   </div>
@@ -197,24 +172,32 @@
       return {
         company_id: '',
         company_name: '',
-        active_menu: 'info',
+        active_menu: 'bj_info',
         open_names: ['bj'],
-        allCount: {},
+        bread2: '企业背景',
+        bread3: '基本信息',
       };
     },
     methods: {
       reqData(name) {
+        const littlemodName = document.getElementById(`${name}_span`).innerText;
+        const menu = document.getElementById(`${name.split('_')[0]}_span`);
+        const bigmodName = menu.innerText;
+        this.bread2 = bigmodName;
+        this.bread3 = littlemodName;
         this.$router.push({
           name,
           query: {
             name: this.company_name,
             id: this.company_id,
             mod: this.open_names[0],
+            bigmodName,
+            littlemodName,
           },
         });
       },
-      openMenu(name) {
-        this.active_menu = name;
+      openMenu(names) {
+        this.open_names = names;
       },
     },
     beforeCreate() {
@@ -227,16 +210,17 @@
       this.company_name = query.name;
       this.open_names = [this.$route.name.split('_')[0] || 'bj'];
       this.active_menu = this.$route.name;
+      const bread2 = this.$route.query.bigmodName;
+      const bread3 = this.$route.query.littlemodName;
+      if (bread2 && bread3) {
+        this.bread2 = bread2;
+        this.bread3 = bread3;
+      }
       if (this.$route.name === 'detail') {
         this.active_menu = 'bj_info';
+        this.open_names = ['bj'];
         this.$router.push({ name: this.active_menu, query });
       }
-      const countUrl = `/company/navcount/${this.company_id}`;
-      this.$http.get(countUrl).then((res) => {
-        this.allCount = res.body.data;
-      }).catch((err) => {
-        this.$Message.error(`服务器出错: ${err}`);
-      });
     },
   };
 </script>
@@ -288,5 +272,13 @@
     color: #D4D4D4;
     text-decoration: blink;
     pointer-events: none;
+    display: none
+  }
+
+  .bread {
+    margin-top: 10px;
+    width: 600px;
+    height: 30px;
+    margin-bottom: 10px;
   }
 </style>

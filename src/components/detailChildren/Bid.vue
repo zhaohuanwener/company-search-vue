@@ -1,5 +1,5 @@
 <template>
-  <Mytable  :columns="columns" :company_id="company_id" total_field="viewtotal" data_field="items"
+  <Mytable  :columns="columns" :company_id="company_id" :company_name="company_name" total_field="viewtotal" data_field="items"
     mod="bid" :data_cb="data_cb"
   ></Mytable>
 </template>
@@ -37,6 +37,7 @@
           key: 'purchaser',
         }],
         company_id: '',
+        company_name: '',
       };
     },
     components: {
@@ -54,6 +55,7 @@
     },
     created() {
       this.company_id = this.$route.query.id;
+      this.company_name = this.$route.query.name;
     },
   };
 </script>

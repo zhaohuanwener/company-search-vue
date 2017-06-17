@@ -1,12 +1,15 @@
 <template id="">
   <div>
     <Dropdown trigger="custom" :visible="show_drop_down" class="input-container" placement="bottom-start" @on-click="show_company_detail">
-      <Input v-model="value" size="large" placeholder="请输入企业名称" @input="search" class="ipt">
-        <Button slot="append" @click="show_search_result">搜索</Button>
+      <Input v-model="value" size="large" placeholder="请输入企业名称" @input="search" class="ipt" autofocus
+      @on-enter="show_search_result">
+        <Button slot="append" @click="show_search_result" :loading="loading">搜索</Button>
       </Input>
       <Dropdown-menu slot="list">
-
-          <Loading v-if="!drop_down_data.length" :size="loadding_size" :content="loading_text"></Loading>
+          <Spin size="large" v-if="!drop_down_data.length">
+              <Icon type="load-c" class="demo-spin-icon-load" size="15"></Icon>
+              <div>loading</div>
+          </Spin>
           <Dropdown-item v-for="item in drop_down_data" :name="item.id_name" key="item.id">{{ item.name }}</Dropdown-item>
       </Dropdown-menu>
     </Dropdown>
@@ -16,7 +19,6 @@
 
 <script type="text/javascript">
 
-import Loading from '../common/components/Loading';
 
 export default {
   data() {
@@ -24,12 +26,8 @@ export default {
       value: '',
       show_drop_down: false,
       drop_down_data: [],
-      loadding_size: 20,
-      loading_text: 'Loading',
+      loading: false,
     };
-  },
-  components: {
-    Loading,
   },
   props: {
     input_value: {
@@ -68,6 +66,7 @@ export default {
       this.$router.push({ name: 'detail', query: { id: arr[0], name: arr[1], mod: 'bj' } });
     },
     show_search_result() {
+      this.loading = true;
       this.$router.push({ name: 'search_result', params: { name: this.value } });
     },
   },
@@ -79,4 +78,10 @@ export default {
 
 <style media="screen">
   @import "../common/css/input.css";
+
+  .primary{
+    color: #fff !important;
+    background-color: #2d8cf0 !important;
+    border-color: #2d8cf0 !important;
+}
 </style>

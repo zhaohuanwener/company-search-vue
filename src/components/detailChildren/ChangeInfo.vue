@@ -1,5 +1,5 @@
 <template>
-  <Mytable  :columns="columns" :company_id="company_id" total_field="total" data_field="result"
+  <Mytable  :columns="columns" :company_id="company_id" :company_name="company_name" total_field="total" data_field="result"
     mod="changeinfo"
   ></Mytable>
 </template>
@@ -31,6 +31,7 @@
           width: 460,
         }],
         company_id: '',
+        company_name: '',
       };
     },
     components: {
@@ -40,6 +41,7 @@
     },
     created() {
       this.company_id = this.$route.query.id;
+      this.company_name = this.$route.query.name;
     },
   };
 </script>

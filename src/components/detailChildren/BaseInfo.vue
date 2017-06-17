@@ -1,7 +1,9 @@
 <template id="">
   <div class="info-container">
     <Loading :size="loading_size" v-if="show_loading"></Loading>
-    <div class="data-container" v-if="!show_loading">
+    <div  v-if="!show_loading">
+       <h2 v-if="!info.name" class="nodeData">暂无数据</h2>
+      <div class="data-container" v-if="info.name">
       <Card class="info-header">
       <div>
           <div class="logo-container">
@@ -77,6 +79,8 @@
           </div>
       </div>
     </div>
+    </div>
+   
   </div>
 </template>
 
@@ -190,6 +194,12 @@
   .base-table {
     margin-top: 10px;
     font-size: 15px;
+  }
+
+  .nodeData {
+    width: 200px;
+    height: 200px;
+    margin: 60px auto
   }
 
 </style>

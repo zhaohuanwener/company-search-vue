@@ -2,7 +2,7 @@
     <div class="body-input">
 
       <div class="index-logo-container">
-        <img src="http://localhost:8010/img/icon-large.png" class="index-logo" alt="">
+        <img src="/img/icon-large.png" class="index-logo" alt="">
       </div>
       <Input-container></Input-container>
     </div>

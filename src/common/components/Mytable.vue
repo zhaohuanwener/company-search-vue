@@ -66,11 +66,11 @@
         const url = `/company/${this.company_id || this.company_name}/${this.mod}?ps=${this.ps}&pn=${this.pn}`;
         this.$http.get(url).then((res) => {
           res = this.response_cb ? this.response_cb(res) : res;
-          const dataField = this.data_field || 'result';
-          const totalField = this.total_field || 'total';
-          const dataBody = res.body.data.page || res.body.data;
-          const data = dataBody[dataField];
-          this.total = dataBody[totalField];
+          // const dataField = this.data_field || 'result';
+          // const totalField = this.total_field || 'total';
+          const dataBody = res.body.data;
+          const data = dataBody.data;
+          this.total = dataBody.total;
           this.data = this.data_cb ? this.data_cb(data) : data;
           this.show_loading = false;
         }).catch((err) => {

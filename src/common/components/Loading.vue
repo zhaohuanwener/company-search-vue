@@ -1,6 +1,6 @@
 <template id="">
   <div class="loading">
-    <Spin size="large" >
+    <Spin size="large">
         <Icon type="load-c" :size="sizeNum" class="demo-spin-icon-load"></Icon>
         <div>{{textData}}</div>
     </Spin>
@@ -33,7 +33,7 @@
 
 
 
-<style media="screen">
+<style media="screen" socped>
 .demo-spin-icon-load{
    animation: ani-demo-spin 1s linear infinite;
 }
@@ -53,7 +53,7 @@
   position: absolute;
   width:200px;
   height:100px;
-  left:50%;
+  left:48%;
   top:40%;
 }
 </style>

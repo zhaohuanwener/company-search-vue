@@ -8,20 +8,24 @@ import App from './App';
 import router from './router';
 
 Vue.config.productionTip = false;
-Vue.config.debug = true;
+// Vue.config.debug = true;
 Vue.use(iView);
 Vue.use(Resource);
 
 
-// router.beforeEach((to, from, next) => {
-//   iView.LoadingBar.start();
-//   next();
-// });
+router.beforeEach((to, from, next) => {
+  if (to.name === 'index') {
+  	iView.LoadingBar.start();
+  }
+  next();
+});
 //
-// router.afterEach(() => {
-//   iView.LoadingBar.finish();
-//   window.scrollTo(0, 0);
-// });
+router.afterEach((to) => {
+	if (to.name === 'index') {
+  	iView.LoadingBar.finish();
+  }
+  // window.scrollTo(0, 0);
+});
 
 /* eslint-disable no-new */
 new Vue({
@@ -29,7 +33,4 @@ new Vue({
   router,
   template: '<App/>',
   components: { App },
-  data: {
-    eventHub: new Vue(),
-  },
 });

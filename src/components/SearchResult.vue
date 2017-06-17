@@ -6,7 +6,7 @@
       </div>
 
       <ul class="result-list">
-        <li v-for="item in result" :id="item.id" @click="show_detail(item.id, item.name)">
+        <li v-for="item in result" :id="item.id" @click="show_detail(item.id, item.name)" @keyup.enter="show_detail(item.id, item.name)">
           <a href="javascript:return">
           <Card style="width:520px; height: 50px;">
             <span  v-html="item.name"></span>
@@ -39,7 +39,7 @@
           name: 'detail',
           query: {
             id,
-            name,
+            name: name.replace('<span style="color:red">', '').replace('</span>', ''),
           },
         });
       },

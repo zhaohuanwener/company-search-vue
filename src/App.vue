@@ -4,7 +4,7 @@
       <div class="header">
           <Menu mode="horizontal" theme="light" active-name="/" @on-select="go">
               <div class="layout-logo">
-                <a href="/"><img src="http://localhost:8010/img/icon-large.png" alt="" class="header-icon"></a>
+                <a href="/"><img src="/img/icon-large.png" alt="" class="header-icon"></a>
               </div>
 
               <div class="layout-nav">

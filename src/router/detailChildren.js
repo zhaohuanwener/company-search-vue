@@ -66,6 +66,34 @@ const routes = [{
   path: '/recruit',
   name: 'jyzk_recruit',
   component: resolve => require(['#/Recruit'], resolve),
+}, {
+  path: '/taxcredit',
+  name: 'jyzk_taxcredit',
+  component: resolve => require(['#/Taxcredit'], resolve),
+}, {
+  path: '/check',
+  name: 'jyzk_check',
+  component: resolve => require(['#/Check'], resolve),
+}, {
+  path: '/productinfo',
+  name: 'jyzk_productinfo',
+  component: resolve => require(['#/Productinfo'], resolve),
+}, {
+  path: '/tm',
+  name: 'zscq_tm',
+  component: resolve => require(['#/Tm'], resolve),
+}, {
+  path: '/patent',
+  name: 'zscq_patent',
+  component: resolve => require(['#/Patent'], resolve),
+}, {
+  path: '/copyr',
+  name: 'zscq_copyr',
+  component: resolve => require(['#/Copyr'], resolve),
+}, {
+  path: '/icp',
+  name: 'zscq_icp',
+  component: resolve => require(['#/Icp'], resolve),
 }];
 
 export default routes;
