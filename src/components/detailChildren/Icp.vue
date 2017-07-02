@@ -68,7 +68,7 @@
     methods: {
       reqData() {
         this.show_loading = true;
-        const url = `/company/${this.company_id}/icp?ps=${this.ps}&pn=${this.pn}`;
+        const url = `/detail/${this.company_id}/icp?ps=${this.ps}&pn=${this.pn}`;
         this.$http.get(url).then((res) => {
           this.allData = res.body.data.data;
           this.total = this.allData.length;

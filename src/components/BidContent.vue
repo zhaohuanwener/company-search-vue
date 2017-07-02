@@ -1,4 +1,4 @@
-<template id="">
+ <template id="">
   <div class="content-root">
 
     <Loading :size="loading_size" class="loading-container" v-if="show_loading"></Loading>

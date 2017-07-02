@@ -121,7 +121,7 @@
       if (!id) {
         return false;
       }
-      this.$http.get(`/company/${id}/info`).then((res) => {
+      this.$http.get(`/detail/${id}/info`).then((res) => {
         this.info = res.body.data;
         const webAddress = this.info.webAddress;
         this.info.webAddress = webAddress === '暂无' ? '暂无' : `<a href="${webAddress}">${webAddress}</a>`;

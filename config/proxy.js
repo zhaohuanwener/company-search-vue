@@ -1,10 +1,9 @@
-const _ = require('underscore');
 
-const target = 'http://localhost:8010';
+const target = 'http://localhost:8000';
 
 const urlList = [
   '/search',
-  '/company'
+  '/detail',
 ];
 const proxyTable = {};
 
