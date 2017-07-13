@@ -10,7 +10,7 @@
               <Icon type="load-c" class="demo-spin-icon-load" size="15"></Icon>
               <div>loading</div>
           </Spin>
-          <Dropdown-item v-for="item in drop_down_data" :name="item.id_name" key="item.id">{{ item.name }}</Dropdown-item>
+          <Dropdown-item v-for="item in drop_down_data" :name="item.id_name" :key="item.id">{{ item.name }}</Dropdown-item>
       </Dropdown-menu>
     </Dropdown>
   </div>
@@ -79,9 +79,4 @@ export default {
 <style media="screen">
   @import "../common/css/input.css";
 
-  .primary{
-    color: #fff !important;
-    background-color: #2d8cf0 !important;
-    border-color: #2d8cf0 !important;
-}
 </style>

@@ -1,6 +1,5 @@
 <template>
     <div class="body-input">
-
       <div class="index-logo-container">
         <img src="/img/icon-large.png" class="index-logo" alt="">
       </div>
@@ -42,7 +41,7 @@ export default {
   .body-input {
     width: 500px;
     height: 350px;
-    margin: 90px auto;
+    margin: 150px auto;
   }
 
 
