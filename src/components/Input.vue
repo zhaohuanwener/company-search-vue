@@ -2,7 +2,7 @@
   <div>
     <Dropdown trigger="custom" :visible="show_drop_down" class="input-container" placement="bottom-start" @on-click="show_company_detail">
       <Input v-model="value" size="large" placeholder="请输入企业名称" @input="search" class="ipt" autofocus
-      @on-enter="show_search_result">
+      @on-enter="show_search_result"  v-on:change="search" v-on:input="search" v-on:propertychange="search">
         <Button slot="append" @click="show_search_result" :loading="loading">搜索</Button>
       </Input>
       <Dropdown-menu slot="list">
@@ -33,19 +33,24 @@ export default {
     input_value: {
       type: String,
     },
+    btnClick: {
+      type: Function,
+    },
   },
   created() {
     this.value = this.input_value || '';
   },
   methods: {
-    search() {
+    search(dropDown) {
       if (!this.value) {
         this.show_drop_down = false;
         this.drop_down_data = [];
         return;
       }
-      this.show_drop_down = true;
-      this.$http.post('/search', {
+      if (dropDown) {
+        this.show_drop_down = true;
+      }
+      return this.$http.post('/search', {
         name: this.value,
       }).then((res) => {
         this.drop_down_data = res.body.data.map(function(d) {
@@ -67,6 +72,10 @@ export default {
     },
     show_search_result() {
       this.loading = true;
+      this.search().then(() => {
+        this.$emit('aptResult', this.drop_down_data);
+        this.loading = false;
+      });
       this.$router.push({ name: 'search_result', params: { name: this.value } });
     },
   },
@@ -78,5 +87,4 @@ export default {
 
 <style media="screen">
   @import "../common/css/input.css";
-
 </style>

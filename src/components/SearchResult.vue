@@ -2,11 +2,11 @@
   <div class="result-container">
     <div class="search_result">
       <div class="input-container">
-        <SearchInput :input_value="input_vaue"></SearchInput>
+        <SearchInput :input_value="input_vaue" @aptResult="onAptResult"></SearchInput>
       </div>
 
       <ul class="result-list">
-        <li v-for="item in result" :id="item.id" @click="show_detail(item.id, item.name)" @keyup.enter="show_detail(item.id, item.name)">
+        <li v-for="item in result" :id="item.id" :key="item.id" @click="show_detail(item.id, item.name)" @keyup.enter="show_detail(item.id, item.name)">
           <a href="javascript:return">
           <Card style="width:520px; height: 50px;">
             <span  v-html="item.name"></span>
@@ -43,20 +43,27 @@
           },
         });
       },
+      showResult() {
+        const name = this.$route.params.name || '';
+        this.input_vaue = name;
+        this.$http.post('/search', {
+          name,
+        }).then((res) => {
+          this.result = res.body.data.map(function(d) {
+            d.name = d.name.replace(name, `<span style="color:red">${name}</span>`);
+            return d;
+          });
+        }).catch(() => {
+          this.$Message.error('服务器出错');
+        });
+      },
+      onAptResult(data) {
+        this.result = data;
+        console.log(data);
+      },
     },
     created() {
-      const name = this.$route.params.name || '';
-      this.input_vaue = name;
-      this.$http.post('/search', {
-        name,
-      }).then((res) => {
-        this.result = res.body.data.map(function(d) {
-          d.name = d.name.replace(name, `<span style="color:red">${name}</span>`);
-          return d;
-        });
-      }).catch(() => {
-        this.$Message.error('服务器出错');
-      });
+      this.showResult();
     },
   };
 </script>
@@ -68,6 +75,7 @@
     width: 100%;
     height: 100%;
     overflow-y: scroll;
+    margin-top: 120px
   }
 
   .search_result {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header/>
+    <Vheader/>
   
      <div class="detail-container">
       <div class="side-menu">
@@ -164,7 +164,7 @@
 </template>
 
 <script type="text/javascript">
-import Header from './Header';
+import Vheader from './Header';
 
 export default {
   data() {
@@ -178,7 +178,7 @@ export default {
     };
   },
   components: {
-    Header,
+    Vheader,
   },
   methods: {
     reqData(name) {
