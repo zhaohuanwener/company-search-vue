@@ -1,16 +1,17 @@
 <template>
-    <Menu mode="horizontal" theme="light" active-name="/" @on-select="goHome">
+    <div class="layout-nav">
+        <Menu mode="horizontal" theme="light" :active-name="activeNav" @on-select="go">
         <div class="layout-logo">
             <a href="/">
-                <img src="/img/icon-large.png" alt="" class="header-icon">
+                <img src="../assets/img/icon-large.png" alt="" class="header-icon">
             </a>
         </div>
     
-        <Menu-item name="/">
-            <Icon type="home"></Icon>
-            {{text}}
-        </Menu-item>
+        <!-- <Menu-item v-for="n in navs" :key="n.path" :name="n.path">
+            {{n.text}}
+        </Menu-item> -->
     </Menu>
+    </div>
 </template>
 
 
@@ -18,14 +19,29 @@
 export default {
     data() {
         return {
-            text: '首页',
+            navs: [{
+                text: '企业搜索',
+                path: '/',
+                icon: 'search'
+            },
+            // {
+            //     text: '可转债',
+            //     path: '/cbonds',
+            //     icon: 'stats-bars'
+            // }
+            ],
+            activeNav: '/'
         };
     },
     methods: {
-        goHome() {
-            this.$router.push('/');
-        },
+        go(name) {
+            this.$router.push(name);
+        }
     },
+    mounted() {
+        const { path = '/' } = this.$route;
+        this.activeNav = path;
+    }
 };
 
 </script>
@@ -37,8 +53,10 @@ export default {
 }
 
 .layout-nav {
-    width: 420px;
-    margin: 0 auto;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0
 }
 
 .layout-logo {

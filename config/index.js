@@ -2,6 +2,8 @@
 var path = require('path');
 var proxy = require('./proxy');
 
+// console.log(proxy)
+
 module.exports = {
   build: {
     env: require('./prod.env'),

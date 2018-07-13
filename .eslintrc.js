@@ -48,5 +48,8 @@ module.exports = {
     'no-mixed-spaces-and-tabs': 0,
     'no-tabs': 0,
     'indent': 0,
+    'comma-dangle': 0,
+    'eol-last': 0,
+    'no-unused-vars': 0
   }
 }

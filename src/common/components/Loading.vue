@@ -1,6 +1,6 @@
 <template id="">
   <div class="loading">
-    <Spin size="large">
+    <Spin size="large" class="loading-span" fix>
         <Icon type="load-c" :size="sizeNum" class="demo-spin-icon-load"></Icon>
         <div>{{textData}}</div>
     </Spin>
@@ -56,4 +56,5 @@
   left:48%;
   top:40%;
 }
+
 </style>

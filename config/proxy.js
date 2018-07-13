@@ -4,6 +4,8 @@ const target = 'http://localhost:8010';
 const urlList = [
   '/search',
   '/detail',
+  '/baseinfo',
+  '/searchkey'
 ];
 const proxyTable = {};
 

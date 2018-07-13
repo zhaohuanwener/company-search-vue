@@ -1,5 +1,5 @@
 require('./check-versions')()
-
+const routes = require('../src/serverRoutes')
 var config = require('../config')
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
@@ -21,6 +21,7 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 var proxyTable = config.dev.proxyTable
 
 var app = express()
+
 var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
@@ -63,6 +64,7 @@ var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsS
 app.use(staticPath, express.static('./static'))
 
 var uri = 'http://localhost:' + port
+routes(app)
 
 var _resolve
 var readyPromise = new Promise(resolve => {

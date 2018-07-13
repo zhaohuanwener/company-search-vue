@@ -113,9 +113,7 @@
     components: {
       Loading,
     },
-    methods: {
-
-    },
+    methods: {},
     created() {
       const id = this.$route.query.id;
       if (!id) {
